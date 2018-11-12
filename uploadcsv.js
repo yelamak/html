@@ -39,6 +39,7 @@ for (var i=1; i<allTextLines.length-1; i++) {
             }
             idobj[id]=tarr;
             id++;
+            localStorage.setItem("id",id);
             lines.push(idobj);
         }
         else{
@@ -59,32 +60,6 @@ localStorage.setItem("id",id);
 console.log(JSON.stringify(jasonarray));
 }
 
-function validate(data){
-    var name=data[0];
-    var email=data[1];
-    var phno=data[2];
-    if(name=='')
-			return false;
-	else if(email.indexOf('@')<0 || email.indexOf('.')<0 || email.lastIndexOf('.')<email.indexOf('@') || email.lastIndexOf('.') >= (email.length-1))
-			return false;
-	else if(phno.length	!=10 )
-            return false;
-    else{
-        var flag=0;
-        jasonarray.forEach(function(arrayitem){
-            
-            $.each( arrayitem, function( key, value ) {
-                $.each(value,function(key1,value1){
-                    if(key1=="email" && value1==email){
-                        flag=1;
-                    }
-                });
-               
-        });
-        });
-        if(flag==1)
-            return false;
-        else
-            return true;
-    }
-}
+
+    
+

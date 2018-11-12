@@ -31,15 +31,7 @@ function JSONToCSVConvertor(JSONData, ReportTitle) {
     });
     row = row.slice(0, -1);
     CSV += row + '\r\n';
-    /*for (var i = 0; i < arrData.length; i++) {
-    var row = "";
-    for (var index in arrData[i]) {
-        for(var j=0;j<arrData[i].length;j++)
-            row += '"' + arrData[i][index] + '",';
-        }
-    row.slice(0, row.length - 1);
-    CSV += row + '\r\n';
-    }*/
+   
     jasonarray.forEach(function(arrayitem){
         var row = "";
         $.each( arrayitem, function( key, value ) {
